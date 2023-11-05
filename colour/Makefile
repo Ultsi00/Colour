@@ -1,5 +1,5 @@
 NAME = colour
-SRCS =	srcs/main.cpp srcs/c_sdl.cpp
+SRCS =	srcs/main.cpp srcs/c_sdl.cpp srcs/program_loop.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

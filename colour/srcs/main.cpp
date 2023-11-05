@@ -1,8 +1,9 @@
 #include "../includes/colour.h"
 
 int main() {
-    SdlData Sdl = SdlData(NULL, NULL);
+    SdlData Sdl = SdlData();
 
+    program_loop(Sdl);
 
     return 0;
 }

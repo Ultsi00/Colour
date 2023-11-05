@@ -4,7 +4,6 @@ To-do:
 circle
 mousemovement
 mouse click
-sdl link
 sdl pixel put
 How to apply multiply to Hex?
 

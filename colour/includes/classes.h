@@ -4,19 +4,14 @@
 
 //classes
 class SdlData {
-    private:
+    public:
         SDL_Window *mWindow;
         SDL_Renderer *mRenderer;
-        //SDL_Event mEvent;
-    public:
-        SdlData(SDL_Window *window, SDL_Renderer *renderer);
+        SdlData();
         ~SdlData();
-        void createWindow(SDL_Window *window);
-        void createRenderer(SDL_Renderer *renderer);
+        void createWindow();
+        void createRenderer();
         SDL_Window *getWindow() { return(mWindow); }
-        SDL_Renderer *getRenderer() { return(mRenderer); }
-        /*SDL_Event getEvent() { return(mEvent); }*/
-
 };
 
 #endif

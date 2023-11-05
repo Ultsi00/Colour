@@ -9,6 +9,10 @@
 
 using namespace std;
 
+void    program_loop(SdlData& Sdl);
+
+
+
 //functions
 
 
