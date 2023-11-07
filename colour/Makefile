@@ -1,5 +1,6 @@
 NAME = colour
-SRCS =	srcs/main.cpp srcs/c_sdl.cpp srcs/program_loop.cpp
+SRCS =	srcs/main.cpp srcs/c_sdl.cpp srcs/c_draw.cpp srcs/program_loop.cpp \
+		srcs/drawing.cpp srcs/fill_vector.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

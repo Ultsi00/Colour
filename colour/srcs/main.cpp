@@ -2,8 +2,10 @@
 
 int main() {
     SdlData Sdl = SdlData();
-
-    program_loop(Sdl);
-
+    Perimeter Perim = Perimeter();
+    vector<Segment> colours;
+    
+    fill_vector(colours);    
+    program_loop(Sdl, Perim, colours);
     return 0;
 }

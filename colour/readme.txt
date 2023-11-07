@@ -1,11 +1,15 @@
 ----
 To-do:
 ----
-circle
-mousemovement
-mouse click
-sdl pixel put
+Break hex value into rgb
+
 How to apply multiply to Hex?
+
+A   cursorpointer (e.g. hand) revolving around colour wheel
+        ENTER to select colour at pointer
+        Colourcode is copied into a Rectangle
+        Two sliders to manipulate Rectangle colour, Saturation and Value
+B   mousemovement/mouse click       do as last, interest was in colours
 
 ----
 Ideas:
@@ -22,10 +26,19 @@ If Hue is (255, 0, 0) (now at Perimeter), moving closer to origo increases G and
 ***Value (0,00 - 1,00):
 Multiplies the (Hue * Saturation): V(0,00) == black, V(1,00) == colour(Hue * Saturation)  
 
+***Drawing
+draw arcs based on radius and angle. Arc starts at radian 0 (East), moves counterclockwise
 
 
+Child classes = different drawing geometry, arcs, lines...
 
 ----
 Structure:
 ----
+
+
+---
+Formulas:
+---
+perimeter = 2 * pi * r
 
