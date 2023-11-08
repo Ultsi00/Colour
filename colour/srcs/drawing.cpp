@@ -1,26 +1,32 @@
 #include "../includes/colour.h"
 
 void segments(SdlData& Sdl, vector<Segment>& colours) {
-    float i = 0.02; //check which value is accurate enough to fill segment
-    int radius = 50; //data.h
-    
-    // while ('colour# < colours_tot')
-    // i = 0.02;
-    while (i < radius) {
-        //better to use 0-11, since can loop. If this, then remove enum.
-        colours[Magenta].drawArc(Sdl, i, 200, 200, colours[Magenta].mColour);
-        i = i + 0.02;
+    float radius;
+    int radius_tot = WHEEL_RADIUS;
+    int k = 0;
+    float start_angle = 0;
+    float segment_angle = 6.283185307f * 0.08333333f; //shorten, segment: 6.283f / 12
+    float end_angle = segment_angle;
+
+    while (k < COLOURS_COUNT) {
+        radius = 0.5;
+        while (radius < radius_tot) {
+            colours[k].drawArc(Sdl, radius, SCRN_W_BASE / 2, SCRN_H_BASE / 2, start_angle, end_angle,
+                        colours[k].mR, colours[k].mG, colours[k].mB);
+            radius = radius + 0.5;
+        }
+        start_angle = start_angle + segment_angle;
+        end_angle = end_angle + segment_angle;
+        k++;
     }
-    // colours['colourcode#'++]
 }
 
 void perimeter(SdlData& Sdl, Perimeter& Perim) {
-    int perimeter_thickness = 20; // data.h
     int i = 0;
-    int radius = 150; // data.h
+    int radius = WHEEL_RADIUS;
 
-    while (i < perimeter_thickness) {
-        Perim.drawPerimeter(Sdl, radius, SCRN_W_BASE / 2, SRCN_H_BASE / 2);
+    while (i < PERIMETER_THICKNESS) {
+        Perim.drawPerimeter(Sdl, radius, SCRN_W_BASE / 2, SCRN_H_BASE / 2);
         radius++;
         i++;
     }

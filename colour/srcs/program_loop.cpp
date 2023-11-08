@@ -1,9 +1,14 @@
 #include "../includes/colour.h"
 
 //do as last, interest was in colouring
-void input(SDL_Event &event) {
-    if (event.key.keysym.sym == SDLK_ESCAPE)
+void input(SDL_Event &event, SdlData& Sdl) {
+    if (event.key.keysym.sym == SDLK_ESCAPE) {
+        SDL_DestroyRenderer(Sdl.mRenderer);
+        Sdl.mRenderer = NULL;
+        SDL_DestroyWindow(Sdl.mWindow);
+        Sdl.mWindow = NULL;
         exit(0);
+    }
     else if(event.key.keysym.sym == SDLK_f)
         cout << "F" << endl;
 }
@@ -22,7 +27,7 @@ void    program_loop(SdlData& Sdl, Perimeter& Perim, vector<Segment>& colours) {
                 quit = true;
             }
             else if (event.type == SDL_KEYDOWN)
-                input(event);
+                input(event, Sdl);
             else if(event.type == SDL_MOUSEBUTTONDOWN) 
                 if (event.button.button == SDL_BUTTON_LEFT)
                     cout << "M1 is clicked once" << endl;

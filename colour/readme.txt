@@ -1,9 +1,12 @@
 ----
 To-do:
 ----
-Break hex value into rgb
-
-How to apply multiply to Hex?
+rgb multiplier (value)
+rgb sum-reduction (saturation)
+segments() cleaning, if can compress variables
+perimeter step increase (so that no black dots)
+think if more objects
+for(auto)
 
 A   cursorpointer (e.g. hand) revolving around colour wheel
         ENTER to select colour at pointer

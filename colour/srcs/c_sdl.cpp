@@ -15,7 +15,7 @@ void SdlData::createWindow() {
     }       
     else {
         mWindow = SDL_CreateWindow("Colour", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-            SCRN_W_BASE, SRCN_H_BASE, SDL_WINDOW_SHOWN);
+            SCRN_W_BASE, SCRN_H_BASE, SDL_WINDOW_SHOWN);
         if (!mWindow)
             this->SdlData::~SdlData();
     }

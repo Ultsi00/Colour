@@ -5,28 +5,32 @@ class SdlData;
 Draw::Draw() {
 }
 
+void Draw::setColour(uint16_t r, uint16_t g, uint16_t b) {
+    mR = r;
+    mG = g;
+    mB = b;
+}
+
 Draw::~Draw() {
 }
 
-Segment::Segment(uint32_t colour) {
-    setColour(colour);
+Segment::Segment(uint16_t r, uint16_t g, uint16_t b) {
+    setColour(r, g, b);
 }
 
-void Segment::drawArc(SdlData& Sdl, float radius, int origo_x, int origo_y, uint32_t colour) {
-    int centrex=200,centrey=200;// centre of circle in pixel coords
-    // int radius=50;
-    int xpos = 0;
-    int ypos = 0;
-
-    float two_pi=6.283f * 0.1666f;
-
-    float angle_inc=1.0f/radius;
-    for(float angle=0.0f; angle<= two_pi;angle+=angle_inc){
-        xpos= centrex + (int)(radius * cos(angle));
-        ypos= centrey + (int)(radius * sin(angle));
+void Segment::drawArc(SdlData& Sdl, float radius, int origo_x, int origo_y, float start_angle, float end_angle,
+                uint16_t r, uint16_t g, uint16_t b)
+    {
+    int x = 0, y = 0;
+    float angle_inc = 1.0f / radius;
+    float angle = start_angle;
+    while (angle <= end_angle) {
+        x = origo_x + (int)(radius * cos(angle));
+        y = origo_y - (int)(radius * sin(angle));
         //this->mColour. Then can remove colour from f(arg)
-        SDL_SetRenderDrawColor(Sdl.mRenderer, 0x00, 0xFF, 0x00, 0x00); //need to break colour into components
-        SDL_RenderDrawPoint(Sdl.mRenderer, xpos, ypos);
+        SDL_SetRenderDrawColor(Sdl.mRenderer, r, g, b, 0x00);
+        SDL_RenderDrawPoint(Sdl.mRenderer, x, y);
+        angle = angle + angle_inc;
     }
 }
 
