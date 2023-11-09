@@ -1,9 +1,12 @@
 ----
 To-do:
 ----
+rectangle (selection start index = 0)
+
+finalize selector look (e.g. this small white)
+
 rgb multiplier (value)
 rgb sum-reduction (saturation)
-segments() cleaning, if can compress variables
 perimeter step increase (so that no black dots)
 think if more objects
 for(auto)

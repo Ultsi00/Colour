@@ -11,8 +11,9 @@
 using namespace std;
 
 //functions
-void    program_loop(SdlData &Sdl, Perimeter& Perim, vector<Segment>& colours);
-void    drawing(SdlData& Sdl, Perimeter& Perim, vector<Segment>& colours);
+void    program_loop(SdlData &sdl, Perimeter& perim, Selector& selec,
+                vector<Segment>& colours, KeyEvent& keyPress);
+void    drawing(SdlData& sdl, Perimeter& perim, Selector& selec, vector<Segment>& colours);
 void    fill_vector(vector<Segment>& colours);
 
 //probably dont need after all, remove then
