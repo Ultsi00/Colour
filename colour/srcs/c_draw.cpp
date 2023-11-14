@@ -94,6 +94,8 @@ Selector::Selector() {
     mSelectedColour = 0, mSelectedColourPrev = 0;
     //Rectangle hue value at selector start position
     mRedRect = 0xFF, mGreenRect = 0x00, mBlueRect = 0xFF;
+    mRedTemp = 0, mGreenTemp = 0, mBlueTemp = 0;
+    mRedAnchor = 0, mGreenAnchor = 0, mBlueAnchor = 0;
 }
 
 /*
@@ -248,8 +250,6 @@ void Selector::countSteps(uint16_t r_hue, uint16_t g_hue, uint16_t b_hue) {
         overall saturation does not go.
 */
 void Selector::setUnitRGB() {
-    mRedTemp = 0, mGreenTemp = 0, mBlueTemp = 0;
-    mRedAnchor = 0, mGreenAnchor = 0, mBlueAnchor = 0;
     mRedTemp = (float)mRedRect / 255;
     mGreenTemp = (float)mGreenRect / 255;
     mBlueTemp = (float)mBlueRect / 255;
