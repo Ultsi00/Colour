@@ -11,7 +11,7 @@ Renders a colour wheel consisting of 12 hues:
 - 3 secondary colours
 - 6 tertiary colours
 
-All the rendering is without the use of images, but with 'putpixel(x, y, colour)'.  
+All the rendering is done without the use of images, but by drawing (RGB) value at (x, y).    
 Each hue is visualized in a segment, resulting in 12 segments forming a circle.  
 Segments are drawn in arcs, increasing the arc radius in each iteration.  
 
