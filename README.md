@@ -13,10 +13,10 @@ Renders a colour wheel consisting of 12 hues:
 
 All the rendering is done without the use of images, but by drawing (RGB) value at (x, y).    
 Each hue is visualized in a segment, resulting in 12 segments forming a circle.  
-Segments are drawn in arcs, increasing the arc radius in each iteration.  
+Segments are drawn in arcs, from origo, by increasing the arc radius in each iteration.  
 
-Around the wheel, at orbit, circle-shaped hue selector can be re-positioned with user input.  
-Selected hue value is transferred into a rectangle. The saturation of the selected hue  
+Around the wheel, at orbit, a circle-shaped hue selector can be re-positioned with user input.  
+The selected hue value is transferred into a rectangle. The saturation of the selected hue  
 can be modified with user input. Modified saturation is visualized in the drawn rectangle.  
 
 Saturation can be gradually modified from maximum hue saturation (original hue value) to minimum  
@@ -26,7 +26,7 @@ saturation (255, 255, 255). Saturation changes can be reverted.
 The distance of the selected hue's R, G and B value to maximum saturation is calculated.  
 From this distance, the increase/decrease steps are derived. Each increase/decrease  
 in saturation modifies the R, G and B value proportionally to the components relative  
-distance between initial value and maximum saturation. For example, if the fictional  
+distance between the initial value and maximum saturation. For example, if the fictional  
 values were R(0), G(5), B(8), and the colour value min-max would be 0-10, one reduction  
 in saturation towards (10, 10, 10) would result in R(1), G(5.5), B(8.2).  
 
@@ -38,8 +38,6 @@ Arrow_up = increase Saturation
 Arrow_left = reduce Value  
 Arrow_right = increase Value  
 ESC = exit  
-
-
 
 
 ### to-be implemented  
