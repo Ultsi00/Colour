@@ -1,21 +1,11 @@
 ----
 To-do:
 ----
-rectangle (selection start index = 0)
+for auto
 
-finalize selector look (e.g. this small white)
+Selector to smaller pieces
 
-rgb multiplier (value)
-rgb sum-reduction (saturation)
-perimeter step increase (so that no black dots)
-think if more objects
-for(auto)
-
-A   cursorpointer (e.g. hand) revolving around colour wheel
-        ENTER to select colour at pointer
-        Colourcode is copied into a Rectangle
-        Two sliders to manipulate Rectangle colour, Saturation and Value
-B   mousemovement/mouse click       do as last, interest was in colours
+Value (same as satu, but instead of ->255, its -> 0)
 
 ----
 Ideas:
@@ -37,14 +27,3 @@ draw arcs based on radius and angle. Arc starts at radian 0 (East), moves counte
 
 
 Child classes = different drawing geometry, arcs, lines...
-
-----
-Structure:
-----
-
-
----
-Formulas:
----
-perimeter = 2 * pi * r
-

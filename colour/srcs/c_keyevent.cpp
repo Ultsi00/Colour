@@ -2,9 +2,13 @@
 
 class Selector;
 
-void KeyEvent::detectKey(SDL_Event& event, Selector& selec) {
-    if (event.key.keysym.sym == SDLK_ESCAPE) {
-        cout << "ESC" << endl;
+void KeyEvent::detectKey(SdlData& sdl, SDL_Event& event, Selector& selec, OutputObject& rectangle)
+{
+    if (event.key.keysym.sym == SDLK_ESCAPE) {       
+        SDL_DestroyRenderer(sdl.mRenderer);
+        sdl.mRenderer = NULL;
+        SDL_DestroyWindow(sdl.mWindow);
+        sdl.mWindow = NULL;
         exit(0);
     }
     else if(event.key.keysym.sym == SDLK_LEFT) {
@@ -15,9 +19,11 @@ void KeyEvent::detectKey(SDL_Event& event, Selector& selec) {
     }
     else if(event.key.keysym.sym == SDLK_DOWN) {
         cout << "saturation down" << endl;
+        selec.changeSaturation(-1);
     }
     else if(event.key.keysym.sym == SDLK_UP) {
         cout << "saturation up" << endl;
+        selec.changeSaturation(1);
     }
     else if(event.key.keysym.sym == SDLK_a) {
         cout << "selector counter-clockwise" << endl;

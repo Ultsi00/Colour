@@ -7,7 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	g++ $(OBJS) -w -lSDL2 -lSDL2_image -o $(NAME)
+	g++ $(OBJS) -w -lSDL2 -o $(NAME)
 #-r (recursive): deletes files before the folder
 #-f (force): ignore non-existant files, and never prompt before removing.
 clean:

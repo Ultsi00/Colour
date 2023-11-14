@@ -2,6 +2,7 @@
 #define CLASSES_H
 #include "colour.h"
 
+//SDL connection
 class SdlData {
     public:
         SDL_Window *mWindow;
@@ -13,6 +14,7 @@ class SdlData {
         SDL_Window *getWindow() { return(mWindow); }
 };
 
+//Object drawing classes
 class Draw {
     public:
         uint16_t mR;
@@ -23,12 +25,12 @@ class Draw {
         int mRadius;
         float mAngle;
         void setColour(uint16_t r, uint16_t g, uint16_t b);
-        void setOrigoX(int origo_x) { mOrigoX = origo_x; }
-        void setOrigoY(int origo_y) { mOrigoY = origo_y; }
-        void setRadius(int radius) { mRadius = radius; }
-        void setAngle(float angle) { mAngle = angle; }
-        int getRadius() { return mRadius; }
-        float getAngle() { return mAngle; }
+        inline void setOrigoX(int origo_x) { mOrigoX = origo_x; }
+        inline void setOrigoY(int origo_y) { mOrigoY = origo_y; }
+        inline void setRadius(int radius) { mRadius = radius; }
+        inline void setAngle(float angle) { mAngle = angle; }
+        inline int getRadius() { return mRadius; }
+        inline float getAngle() { return mAngle; }
 
 };
 
@@ -47,18 +49,35 @@ class Perimeter : public Draw {
 
 class Selector : public Perimeter {
     public:
-        int mSelected_colour;
+        uint8_t mSelectedColourPrev, mSelectedColour;
+        uint16_t mRedRect, mGreenRect, mBlueRect;
+        float mRedStepSize, mGreenStepSize, mBlueStepSize;
+        float mRedTemp, mGreenTemp, mBlueTemp;
+        float mRedAnchor, mGreenAnchor, mBlueAnchor;
         Selector();
         ~Selector();
-        void drawSelector(SdlData& sdl);
         void setPos(float angle, float multiplier);
+        void drawSelector(SdlData& sdl);
         void changePos(int dir);
+        void setCurrentColour(Segment& colour_current);
+        void changeSaturation(int saturation_change);
+        void countSteps(uint16_t r_hue, uint16_t g_hue, uint16_t b_hue);
+        void setUnitRGB();
 };
 
+class OutputObject : Selector {
+    public:
+        SDL_Rect mRect;
+        OutputObject();
+        ~OutputObject();
+        void setPosAndArea(int x, int y, int w , int h);
+        void drawRectangle(SdlData& sdl, uint16_t r, uint16_t g, uint16_t b);
+};
+
+//Key input
 class KeyEvent {
     public:
-        void detectKey(SDL_Event& event, Selector& selec);
-
+        void detectKey(SdlData& sdl, SDL_Event& event, Selector& selec, OutputObject& rectangle);
 };
 
 #endif

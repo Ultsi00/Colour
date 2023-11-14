@@ -1,18 +1,10 @@
 #include "../includes/colour.h"
 
 /*
-    Draws colour selector.
-*/
-void selector(SdlData& sdl, Selector& selec) {
-    selec.drawSelector(sdl);
-
-}
-
-/*
     Draws colour segments.
 */
-void segments(SdlData& sdl, vector<Segment>& colours) {
-    int k = 0;
+static void segments(SdlData& sdl, vector<Segment>& colours) {
+    uint8_t k = 0;
     float start_angle = START_ANGLE;
     float end_angle = colours[k].getAngle();
 
@@ -27,8 +19,8 @@ void segments(SdlData& sdl, vector<Segment>& colours) {
 /*
     Draws perimeter.
 */
-void perimeter(SdlData& sdl, Perimeter& perim) {
-    int radius = WHEEL_RADIUS;
+static void perimeter(SdlData& sdl, Perimeter& perim) {
+    float radius = WHEEL_RADIUS;
 
     while (radius < (WHEEL_RADIUS + PERIMETER_THICKNESS)) {
         perim.drawPerimeter(sdl, radius, SCRN_W_BASE / 2, SCRN_H_BASE / 2);
@@ -39,11 +31,14 @@ void perimeter(SdlData& sdl, Perimeter& perim) {
 /*
     Controls colour segment, perimeter and selector drawing.
 */
-void drawing(SdlData& sdl, Perimeter& perim, Selector& selec, vector<Segment>& colours) {
-
+void drawing(SdlData& sdl, Perimeter& perim, Selector& selec, 
+            vector<Segment>& colours, OutputObject& rectangle)
+{
+    selec.setCurrentColour(colours[selec.mSelectedColour]);
+    selec.countSteps(colours[selec.mSelectedColour].mR, colours[selec.mSelectedColour].mG,
+            colours[selec.mSelectedColour].mB);
     segments(sdl, colours);
     perimeter(sdl, perim);
-    selector(sdl, selec);
-
-
+    selec.drawSelector(sdl);
+    rectangle.drawRectangle(sdl, selec.mRedRect, selec.mGreenRect, selec.mBlueRect);
 }

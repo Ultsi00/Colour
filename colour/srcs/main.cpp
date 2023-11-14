@@ -1,14 +1,14 @@
 #include "../includes/colour.h"
 
-//put Perimeters to vector<Perimeter> circles;
 int main() {
     SdlData sdl = SdlData();
+    KeyEvent keyPress;
+    vector<Segment> colours;
     Perimeter perim;
     Selector selec = Selector();
-    vector<Segment> colours;
-    KeyEvent keyPress;
+    OutputObject rectangle;
 
     fill_vector(colours);    
-    program_loop(sdl, perim, selec, colours, keyPress);
+    program_loop(sdl, perim, selec, colours, keyPress, rectangle);
     return 0;
 }
