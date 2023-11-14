@@ -1,6 +1,8 @@
 # Colour  
-Created on Linux Mint 21.2 Cinnamon. SDL2 framework for graphics.
-
+Created on Linux Mint 21.2 Cinnamon. SDL2 framework for graphics.  
+Purpose was to study the relation between Hue, Saturation and Value,  
+whereas to shift from FP to OOP.
+  
 ## Program explained  
 Renders a colour wheel consisting of 12 hues:  
 - 3 primary colours (RGB)
