@@ -2,6 +2,8 @@
 Created on Linux Mint 21.2 Cinnamon. SDL2 framework for graphics.  
 Purpose was to study the relation between Hue, Saturation and Value,  
 whereas to shift from FP to OOP.
+
+https://github.com/Ultsi00/Colour/assets/60548494/3a6a0764-4cd8-455d-9480-85c938b887e5
   
 ## Program explained  
 Renders a colour wheel consisting of 12 hues:  
