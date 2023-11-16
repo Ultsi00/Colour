@@ -25,7 +25,7 @@ saturation (255, 255, 255). Saturation changes can be reverted.
 ### Saturation change implementation:  
 The distance of the selected hue's R, G and B value to maximum saturation is calculated.  
 From this distance, the increase/decrease steps are derived. Each increase/decrease  
-in saturation modifies the R, G and B value proportionally to the components relative  
+in saturation modifies the R, G and B value proportionally to the component's relative  
 distance between the initial value and maximum saturation. For example, if the fictional  
 values were R(0), G(5), B(8), and the colour value min-max would be 0-10, one reduction  
 in saturation towards (10, 10, 10) would result in R(1), G(5.5), B(8.2).  
