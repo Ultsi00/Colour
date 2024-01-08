@@ -1,5 +1,10 @@
 # Colour  
-Created on Linux Mint 21.2 Cinnamon. SDL2 framework for graphics.  
+Created on Linux Mint 21.2 Cinnamon. SDL2 framework for graphics. 
+  
+Reverse engineered by observing RGB value changes upon altering  
+colour selector position:  
+![observations](https://github.com/Ultsi00/Colour/assets/60548494/ecabb60d-c06f-4391-a4fa-e16f1cceb029)
+
 Purpose was to study the relation between Hue, Saturation and Value,  
 whereas to shift from FP to OOP.
 
